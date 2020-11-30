@@ -15,6 +15,9 @@ RUN npm ci --production
 
 FROM node:12-alpine
 
+ENV PORT=3000
+ENV NODE_ENV=production
+
 WORKDIR /app
 
 COPY --from=build /app/__sapper__/build   __sapper__/build
